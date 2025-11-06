@@ -1,7 +1,6 @@
-import {useColorScheme, Platform} from 'react-native';
+import {useColorScheme, Platform, ImageStyle} from 'react-native';
 import {DefaultTheme} from '@react-navigation/native';
 import {PhoneThemes, MainTheme, StackOpt, TabOpt} from 'types';
-
 import Themes from './modes';
 
 const checkPhoneThemeMode = (): PhoneThemes => {
@@ -37,15 +36,17 @@ const tabBar = (): TabOpt => {
 
       return {
             headerShown: false,
-            tabBarShowLabel: true,
+            tabBarShowLabel: false,
             tabBarStyle: {
                   backgroundColor: background.tabBar,
                   borderTopWidth: 0,
-                  height: isIOS ? 70 : 65,
+                  height: isIOS ? 70 : 55,
                   marginTop: 0,
                   marginBottom: 0,
                   paddingBottom: 0,
                   paddingTop: isIOS ? 3 : 0,
+                  borderTopLeftRadius: 20,
+                  borderTopRightRadius: 20,
             },
             tabBarLabelStyle: {
                   fontSize: 10,
@@ -56,4 +57,13 @@ const tabBar = (): TabOpt => {
       };
 };
 
-export {theme, stack, tabBar};
+const tabIcon: ImageStyle = {
+      width: 30,
+      height: 30,
+      marginTop: Platform.OS === 'ios' ? 60 : 25,
+      marginBottom: Platform.OS === 'ios' ? 55 : 10,
+      resizeMode: 'contain',
+      tintColor: '#ffffffff',
+};
+
+export {theme, stack, tabBar, tabIcon};

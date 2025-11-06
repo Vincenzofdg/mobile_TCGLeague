@@ -3,14 +3,12 @@ import {Text} from 'react-native';
 import {ScreenProps} from 'types';
 import {SafeArea} from 'inheritances';
 
-function ProfileScreen({
-      navigation,
-}: ScreenProps['Profile']): React.ReactElement {
+function MapScreen({navigation}: ScreenProps['Map']): React.ReactElement {
       return (
             <SafeArea>
-                  <Text>PROFILE</Text>
+                  <Text>MAP</Text>
             </SafeArea>
       );
 }
 
-export default ProfileScreen;
+export default MapScreen;

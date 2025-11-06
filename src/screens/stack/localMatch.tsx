@@ -3,14 +3,14 @@ import {Text} from 'react-native';
 import {ScreenProps} from 'types';
 import {SafeArea} from 'inheritances';
 
-function ProfileScreen({
+function LocalMatchScreen({
       navigation,
-}: ScreenProps['Profile']): React.ReactElement {
+}: ScreenProps['LocalMatch']): React.ReactElement {
       return (
             <SafeArea>
-                  <Text>PROFILE</Text>
+                  <Text>MATCH PAGE</Text>
             </SafeArea>
       );
 }
 
-export default ProfileScreen;
+export default LocalMatchScreen;

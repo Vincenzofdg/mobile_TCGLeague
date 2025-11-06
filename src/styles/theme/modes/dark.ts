@@ -1,15 +1,16 @@
 export default {
       theme: {
             primary: '#cececeff',
-            background: '#ffffffff',
+            background: '#525252',
+            // background: '#2A0047',
             card: '#54626F',
             text: '#ffffffff',
             border: '#54626F',
             notification: '#156bc0ff',
       },
       background: {
-            tabBar: '#54626f',
-            mainPage: '#ffffff',
+            tabBar: '#000000ff',
+            mainPage: '#54626f',
             subPage: '#04498C',
             button: '#ededed',
             card: '#e51d5c',

@@ -1,4 +1,6 @@
 import Home from './home';
+import Map from './map';
+import Match from './match';
 import Profile from './profile';
 
-export {Home, Profile};
+export {Home, Map, Match, Profile};

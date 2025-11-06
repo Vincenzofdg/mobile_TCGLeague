@@ -1,26 +1,51 @@
 import React from 'react';
+import {Image} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {RootTabList, TabScreenComponent} from 'types';
 import {tab as tabScreens} from 'screens';
-import {RootTabList} from 'types';
-import {tabBar} from 'styles';
+import {tabBar, tabIcon} from 'styles';
+import {tabBarIcons} from 'global';
 
 const Tab = createBottomTabNavigator<RootTabList>();
 
 function Routes(): React.JSX.Element {
-      const initialTab = 'Home' as keyof RootTabList;
+      const initial: keyof RootTabList = 'Home';
+      const screens = Object.keys(tabScreens) as Array<keyof RootTabList>;
       const opt = tabBar();
+
+      const iconRender = (screen: keyof RootTabList, focused: boolean) => {
+            return (
+                  <Image
+                        source={tabBarIcons[screen]}
+                        style={[tabIcon, focused && {tintColor: '#b216fa'}]}
+                  />
+            );
+      };
 
       return (
             <SafeAreaView style={{flex: 1}} edges={['bottom']}>
-                  <Tab.Navigator
-                        initialRouteName={initialTab}
-                        screenOptions={opt}>
-                        <Tab.Screen name="Home" component={tabScreens.Home} />
-                        <Tab.Screen
-                              name="Profile"
-                              component={tabScreens.Profile}
-                        />
+                  <Tab.Navigator initialRouteName={initial} screenOptions={opt}>
+                        {screens.map(screen => {
+                              const component = tabScreens[
+                                    screen
+                              ] as TabScreenComponent<typeof screen>;
+
+                              return (
+                                    <Tab.Screen
+                                          key={screen}
+                                          name={screen}
+                                          component={component}
+                                          options={{
+                                                tabBarIcon: ({focused}) =>
+                                                      iconRender(
+                                                            screen,
+                                                            focused,
+                                                      ),
+                                          }}
+                                    />
+                              );
+                        })}
                   </Tab.Navigator>
             </SafeAreaView>
       );

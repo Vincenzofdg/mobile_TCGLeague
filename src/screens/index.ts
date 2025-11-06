@@ -1,3 +1,4 @@
+import * as stack from './stack';
 import * as tab from './tab';
 
-export {tab};
+export {stack, tab};

@@ -7,7 +7,11 @@ module.exports = {
                         root: ['./src'],
                         alias: {
                               types: './src/definitions/type/index',
+                              interfaces: './src/definitions/interface/index',
                               screens: './src/screens/index',
+                              inheritances:
+                                    './src/components/inheritance/index',
+                              global: './src/global/index',
                               styles: './src/styles/index',
                         },
                   },
