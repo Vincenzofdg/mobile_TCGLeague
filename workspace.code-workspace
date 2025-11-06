@@ -18,15 +18,15 @@
 		},
 		{
 			"name": "Interfaces",
-			"path": "src/types/Interface"
+			"path": "src/definitions/Interface"
 		},
 		{
 			"name": "Types",
-			"path": "src/types/type"
+			"path": "src/definitions/type"
 		},
 		{
 			"name": "Enums",
-			"path": "src/types/enum"
+			"path": "src/definitions/enum"
 		},
 		{
 			"name": "Languages",

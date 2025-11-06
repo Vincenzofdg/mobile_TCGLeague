@@ -32,27 +32,21 @@ const stack = (): StackOpt => {
 const tabBar = (): TabOpt => {
       const isIOS = Platform.OS === 'ios';
       const phoneTheme = checkPhoneThemeMode();
-      const {background, text} = Themes[phoneTheme];
+      const {tabBar} = Themes[phoneTheme];
 
       return {
             headerShown: false,
             tabBarShowLabel: false,
             tabBarStyle: {
-                  backgroundColor: background.tabBar,
-                  borderTopWidth: 0,
+                  backgroundColor: tabBar.background,
                   height: isIOS ? 70 : 55,
-                  marginTop: 0,
-                  marginBottom: 0,
-                  paddingBottom: 0,
                   paddingTop: isIOS ? 3 : 0,
-                  borderTopLeftRadius: 20,
-                  borderTopRightRadius: 20,
             },
             tabBarLabelStyle: {
                   fontSize: 10,
                   marginTop: 12,
                   fontWeight: '500',
-                  color: text.tabBar,
+                  color: tabBar.text,
             },
       };
 };
@@ -66,4 +60,9 @@ const tabIcon: ImageStyle = {
       tintColor: '#ffffffff',
 };
 
-export {theme, stack, tabBar, tabIcon};
+const colorScheme = () => {
+      const phoneTheme = checkPhoneThemeMode();
+      return Themes[phoneTheme]
+}
+
+export {theme, stack, tabBar, tabIcon, colorScheme};

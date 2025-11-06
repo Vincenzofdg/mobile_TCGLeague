@@ -11,7 +11,8 @@
                   "screens": ["screens/index"],
                   "inheritances": ["components/inheritance/index"],
                   "global": ["global/index"],
-                  "styles": ["styles/index"]
+                  "styles": ["styles/index"],
+                  "buttons": ["components/button/index"]
             }
       }
 }

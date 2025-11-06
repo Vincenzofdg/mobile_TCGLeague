@@ -4,7 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {RootTabList, TabScreenComponent} from 'types';
 import {tab as tabScreens} from 'screens';
-import {tabBar, tabIcon} from 'styles';
+import {tabBar, tabIcon, colorScheme} from 'styles';
 import {tabBarIcons} from 'global';
 
 const Tab = createBottomTabNavigator<RootTabList>();
@@ -13,12 +13,13 @@ function Routes(): React.JSX.Element {
       const initial: keyof RootTabList = 'Home';
       const screens = Object.keys(tabScreens) as Array<keyof RootTabList>;
       const opt = tabBar();
+      const colors = colorScheme()
 
       const iconRender = (screen: keyof RootTabList, focused: boolean) => {
             return (
                   <Image
                         source={tabBarIcons[screen]}
-                        style={[tabIcon, focused && {tintColor: '#b216fa'}]}
+                        style={[tabIcon, focused && {tintColor: colors.tabBar.focused}]}
                   />
             );
       };

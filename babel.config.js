@@ -13,6 +13,7 @@ module.exports = {
                                     './src/components/inheritance/index',
                               global: './src/global/index',
                               styles: './src/styles/index',
+                              buttons: './src/components/button/index',
                         },
                   },
             ],

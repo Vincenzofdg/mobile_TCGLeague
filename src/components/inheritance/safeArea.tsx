@@ -1,13 +1,22 @@
 import React from 'react';
+import {StyleSheet} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {IInheritance} from 'interfaces';
+import {IInheritanceSafeArea} from 'interfaces';
 
-function SafeArea({children}: IInheritance): React.ReactElement {
+function SafeArea({ children }: IInheritanceSafeArea): React.ReactElement {
+      const edges = ['top', 'left', 'right'] as const;
+      
       return (
-            <SafeAreaView style={{flex: 1}} edges={['top', 'left', 'right']}>
+            <SafeAreaView style={styles.container} edges={edges}>
                   {children}
             </SafeAreaView>
       );
 }
+
+const styles = StyleSheet.create({
+      container: {
+            flex: 1
+      }
+})
 
 export {SafeArea};
