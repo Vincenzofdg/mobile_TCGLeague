@@ -4,7 +4,7 @@ interface IInheritance {
       children: React.ReactNode;
 }
 
-export interface IInheritanceSafeArea extends IInheritance { }
+export interface IInheritanceSafeArea extends IInheritance {}
 
 export interface IInheritanceButton extends IInheritance {
       children: React.ReactNode;

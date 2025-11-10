@@ -8,12 +8,17 @@ export default {
             notification: '#156bc0ff',
       },
       background: {
-
             mainPage: '#54626f',
             subPage: '#04498C',
             button: '#ededed',
             card: '#e51d5c',
             header: '#3bb701',
+      },
+      borderBackground: {
+            image: '#06bf4a',
+      },
+      tintColor: {
+            button: '#ffffff',
       },
       tabBar: {
             background: '#191a1f',
@@ -23,6 +28,6 @@ export default {
       button: {
             backgroundEnabled: '#06bf4a',
             backgroundDisabled: '#16723aff',
-            label: '#fef7f7'
-      }
+            label: '#fef7f7',
+      },
 };

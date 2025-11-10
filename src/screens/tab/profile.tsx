@@ -2,6 +2,7 @@ import React from 'react';
 import {Text} from 'react-native';
 import {ScreenProps} from 'types';
 import {SafeArea} from 'inheritances';
+import {PictureButton} from 'buttons';
 
 function ProfileScreen({
       navigation,
@@ -9,6 +10,7 @@ function ProfileScreen({
       return (
             <SafeArea>
                   <Text>PROFILE</Text>
+                  <PictureButton />
             </SafeArea>
       );
 }

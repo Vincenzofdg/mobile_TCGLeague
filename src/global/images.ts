@@ -4,3 +4,11 @@ export const tabBarIcons = {
       Match: require('assets/tabBar/match.png'),
       Profile: require('assets/tabBar/profile.png'),
 };
+
+export const common = {
+      camera: require('assets/camera.png'),
+};
+
+export const user = {
+      profile: require('assets/user/profile.png'),
+};

@@ -13,13 +13,16 @@ function Routes(): React.JSX.Element {
       const initial: keyof RootTabList = 'Home';
       const screens = Object.keys(tabScreens) as Array<keyof RootTabList>;
       const opt = tabBar();
-      const colors = colorScheme()
+      const colors = colorScheme();
 
       const iconRender = (screen: keyof RootTabList, focused: boolean) => {
             return (
                   <Image
                         source={tabBarIcons[screen]}
-                        style={[tabIcon, focused && {tintColor: colors.tabBar.focused}]}
+                        style={[
+                              tabIcon,
+                              focused && {tintColor: colors.tabBar.focused},
+                        ]}
                   />
             );
       };

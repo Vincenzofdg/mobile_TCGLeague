@@ -62,7 +62,7 @@ const tabIcon: ImageStyle = {
 
 const colorScheme = () => {
       const phoneTheme = checkPhoneThemeMode();
-      return Themes[phoneTheme]
-}
+      return Themes[phoneTheme];
+};
 
 export {theme, stack, tabBar, tabIcon, colorScheme};

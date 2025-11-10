@@ -2,8 +2,10 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {FlatList, View, Text} from 'react-native';
 import {IMatchModeFlatlist, IMatchModeCard} from 'interfaces';
 
-function MatchModeFlatlist({ navigation }: IMatchModeFlatlist): React.ReactElement {
-      const [payload, setPayload] = useState<IMatchModeCard[]>([])
+function MatchModeFlatlist({
+      navigation,
+}: IMatchModeFlatlist): React.ReactElement {
+      const [payload, setPayload] = useState<IMatchModeCard[]>([]);
 
       useEffect(() => {
             async function FetchInfo() {
@@ -22,26 +24,29 @@ function MatchModeFlatlist({ navigation }: IMatchModeFlatlist): React.ReactEleme
                               id: 3,
                               name: 'Yu-Gi-Oh!',
                               url: 'url-to-image',
-                        }
-                  ]
+                        },
+                  ];
 
-                  setPayload(mockedData)
+                  setPayload(mockedData);
             }
 
-            FetchInfo()
-      }, [])
+            FetchInfo();
+      }, []);
 
-    const handleItemRendering = useCallback(
-        (component: IMatchModeCard) => (
-            // <BranchCard content={component} navigation={navigation} />
-                <Text>{component.name}</Text>
-        ),
-        [navigation],
-    );
+      const handleItemRendering = useCallback(
+            (component: IMatchModeCard) => (
+                  // <BranchCard content={component} navigation={navigation} />
+                  <Text>{component.name}</Text>
+            ),
+            [navigation],
+      );
 
-    const keyExtractor = useCallback(({id}: IMatchModeCard) => 'tcg-game-' + id, []);
+      const keyExtractor = useCallback(
+            ({id}: IMatchModeCard) => 'tcg-game-' + id,
+            [],
+      );
 
-    return (
+      return (
             <FlatList
                   data={payload}
                   renderItem={({item}) => handleItemRendering(item)}
@@ -50,7 +55,7 @@ function MatchModeFlatlist({ navigation }: IMatchModeFlatlist): React.ReactEleme
                   ItemSeparatorComponent={() => <View style={{height: 20}} />}
                   ListFooterComponent={<View style={{height: 20}} />}
             />
-    );
+      );
 }
 
 export {MatchModeFlatlist};
