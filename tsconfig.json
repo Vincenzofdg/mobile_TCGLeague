@@ -8,11 +8,13 @@
             "paths": {
                   "types": ["definitions/type/index"],
                   "interfaces": ["definitions/interface/index"],
+                  "enums": ["definitions/enum/index"],
                   "screens": ["screens/index"],
                   "inheritances": ["components/inheritance/index"],
                   "global": ["global/index"],
                   "styles": ["styles/index"],
-                  "buttons": ["components/button/index"]
+                  "buttons": ["components/button/index"],
+                  "flatlists": ["components/flatlist/index"]
             }
       }
 }

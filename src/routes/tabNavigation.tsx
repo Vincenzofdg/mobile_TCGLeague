@@ -10,7 +10,7 @@ import {tabBarIcons} from 'global';
 const Tab = createBottomTabNavigator<RootTabList>();
 
 function Routes(): React.JSX.Element {
-      const initial: keyof RootTabList = 'Home';
+      const initial: keyof RootTabList = 'Match';
       const screens = Object.keys(tabScreens) as Array<keyof RootTabList>;
       const opt = tabBar();
       const colors = colorScheme();

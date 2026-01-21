@@ -8,12 +8,13 @@ module.exports = {
                         alias: {
                               types: './src/definitions/type/index',
                               interfaces: './src/definitions/interface/index',
-                              screens: './src/screens/index',
+                              enums: './src/definitions/enum/index',
                               inheritances:
                                     './src/components/inheritance/index',
                               global: './src/global/index',
                               styles: './src/styles/index',
                               buttons: './src/components/button/index',
+                              flatlists: './src/components/flatlist/index',
                         },
                   },
             ],

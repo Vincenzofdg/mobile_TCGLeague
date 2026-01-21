@@ -3,7 +3,8 @@
       "version": "1.0.0",
       "private": true,
       "scripts": {
-            "start": "adb reverse tcp:8081 tcp:8081 && react-native start",
+            "start": "react-native start",
+            "start:android": "adb reverse tcp:8081 tcp:8081 && react-native start",
             "reset-cache": "adb reverse tcp:8081 tcp:8081 && react-native start --reset-cache",
             "build": "node scripts/android.build.js && cd android && gradlew clean && gradlew assembleRelease",
             "android": "react-native run-android",

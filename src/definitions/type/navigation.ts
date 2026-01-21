@@ -3,8 +3,8 @@ import type {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 import type {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 export type RootTabList = {
-      Home: undefined;
-      Map: undefined;
+      // Home: undefined;
+      // Map: undefined;
       Match: undefined;
       Profile: undefined;
 };
