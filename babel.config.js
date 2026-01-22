@@ -17,6 +17,7 @@ module.exports = {
                               buttons: './src/components/button/index',
                               flatlists: './src/components/flatlist/index',
                               cards: './src/components/card/index',
+                              service: './src/service/index',
                         },
                   },
             ],

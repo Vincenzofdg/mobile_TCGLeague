@@ -3,6 +3,7 @@ import {ScreenProps} from 'types';
 import {SafeArea} from 'inheritances';
 import {IMatchMode} from 'interfaces';
 import {GameTypeFlatlist as Flatlist} from 'flatlists';     
+import { generateToken } from 'service'
 
 function MatchScreen({navigation}: ScreenProps['Match']): React.ReactElement {
       const [matchConfig, setMatchConfig] = useState({} as IMatchMode);
@@ -10,6 +11,14 @@ function MatchScreen({navigation}: ScreenProps['Match']): React.ReactElement {
       useEffect(() => {
             // console.log(matchConfig)
       }, [matchConfig])
+
+      useEffect(() => {
+            async function test() {
+                  const t = await generateToken();
+            }
+
+            test()
+      }, []);
 
       return (
             <SafeArea>

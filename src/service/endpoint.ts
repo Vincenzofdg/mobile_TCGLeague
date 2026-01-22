@@ -4,5 +4,5 @@ export const mainUrl = {
 };
 
 export const token = {
-      login: '/auth/token',
+      login: '/api/auth/login',
 }

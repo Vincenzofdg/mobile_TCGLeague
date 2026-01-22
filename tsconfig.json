@@ -15,7 +15,8 @@
                   "styles": ["styles/index"],
                   "buttons": ["components/button/index"],
                   "flatlists": ["components/flatlist/index"],
-                  "cards": ["components/card/index"]
+                  "cards": ["components/card/index"],
+                  "service": ["service/index"]
             }
       }
 }
