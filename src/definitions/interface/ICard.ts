@@ -1,6 +1,7 @@
+import { ITcgConfig, IMatchMode } from 'interfaces';
+
 export interface IMatchModeCard {
-      id: number;
-      name: string;
-      rawName: string;
-      url?: string;
+      payload: ITcgConfig;
+      isSelected: boolean;
+      setConfig: React.Dispatch<React.SetStateAction<IMatchMode>>;
 }

@@ -1,9 +1,15 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {StyleSheet, FlatList, View, Text, TouchableOpacity, ImageBackground} from 'react-native';
-import {IGameTypeFlatlist, IMatchModeCard} from 'interfaces';
+import {StyleSheet, FlatList, View, Text} from 'react-native';
+import {IGameTypeFlatlist, ITcgConfig} from 'interfaces';
+import {TcgCard} from 'cards'
 
-function GameTypeFlatlist({title, config}: IGameTypeFlatlist): React.ReactElement {
-      const [payload, setPayload] = useState<IMatchModeCard[]>([]);
+function GameTypeFlatlist({title, setConfig, config}: IGameTypeFlatlist): React.ReactElement {
+      const [payload, setPayload] = useState<ITcgConfig[]>([]);
+      const [selected, setSelected] = useState<number>(0);
+
+      useEffect(() => {
+            setSelected(config?.id || 0);
+      }, [config])
 
       useEffect(() => {
             async function FetchInfo() {
@@ -34,21 +40,9 @@ function GameTypeFlatlist({title, config}: IGameTypeFlatlist): React.ReactElemen
             FetchInfo();
       }, []);
 
-      const handleClick = (tcg: IMatchModeCard) => {
-            config(p => ({...p, tcg}))
-      }
-
-      const handleItemRendering = useCallback(
-            (component: IMatchModeCard) => (
-                  // <BranchCard content={component} navigation={navigation} />
-                  <TouchableOpacity onPress={() => handleClick(component)} style={{alignItems: 'center', borderRadius: 8, overflow: 'hidden'}}>
-                        <ImageBackground source={{uri: component.url}} style={{width: 180, height: 120, }}></ImageBackground>
-                  </TouchableOpacity>
-            ),
-            [],
-      );
-
-      const keyExtractor = useCallback(({id}: IMatchModeCard) => 'tcg-game-' + id, []);
+      const handleItemRendering = (payload: ITcgConfig) => <TcgCard payload={payload} isSelected={payload.id === selected} setConfig={setConfig} />;
+    
+      const keyExtractor = useCallback(({id}: ITcgConfig) => 'tcg-game-' + id, []);
 
       return (
             <View style={styles.container}>

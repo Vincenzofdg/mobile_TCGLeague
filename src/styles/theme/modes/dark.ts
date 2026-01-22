@@ -30,4 +30,7 @@ export default {
             backgroundDisabled: '#16723aff',
             label: '#fef7f7',
       },
+      card: {
+            selected: '#3bb701',
+      }
 };

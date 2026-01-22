@@ -14,7 +14,8 @@
                   "global": ["global/index"],
                   "styles": ["styles/index"],
                   "buttons": ["components/button/index"],
-                  "flatlists": ["components/flatlist/index"]
+                  "flatlists": ["components/flatlist/index"],
+                  "cards": ["components/card/index"]
             }
       }
 }

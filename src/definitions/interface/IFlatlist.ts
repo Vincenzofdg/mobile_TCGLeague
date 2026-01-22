@@ -1,6 +1,6 @@
 import {NavigationProp} from '@react-navigation/native';
 import {RootList} from 'types';
-import {IMatchModeCard} from './ICard';
+import {ITcgConfig, IMatchMode} from 'interfaces';
 
 interface IFlatlist {
       navigation: NavigationProp<RootList>;
@@ -8,5 +8,6 @@ interface IFlatlist {
 
 export interface IGameTypeFlatlist {
       title: string;
-      config: React.Dispatch<React.SetStateAction<IMatchModeCard>>;
+      config: ITcgConfig;
+      setConfig: React.Dispatch<React.SetStateAction<IMatchMode>>;
 }

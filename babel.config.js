@@ -12,9 +12,11 @@ module.exports = {
                               inheritances:
                                     './src/components/inheritance/index',
                               global: './src/global/index',
+                              screens: './src/screens/index',
                               styles: './src/styles/index',
                               buttons: './src/components/button/index',
                               flatlists: './src/components/flatlist/index',
+                              cards: './src/components/card/index',
                         },
                   },
             ],
